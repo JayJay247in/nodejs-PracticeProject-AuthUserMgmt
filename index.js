@@ -70,11 +70,11 @@ app.post("/login", (req, res) => {
     }
 
     // Authenticate user
-    if (authenticatedUser(username, password)) {
+            if (authenticatedUser(username, password)) {
         // Generate JWT access token
         let accessToken = jwt.sign({
             data: password
-        }, 'access', { expiresIn: 60 * 60 });
+        }, 'access', { expiresIn: 60 });
 
         // Store access token and username in session
         req.session.authorization = {
